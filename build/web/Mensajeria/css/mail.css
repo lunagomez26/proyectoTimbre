@@ -1,0 +1,51 @@
+body{
+  margin: 50px 20px;
+  background-image: url(../img/mail.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body:before{
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #bdc3c7;
+  opacity: 90%;
+}
+
+form .btn{
+  background: #757F9A;
+  color: #D4D3DD;
+}
+
+form .btn:hover{
+  font-weight: 600;
+  color: white;
+}
+
+form, img{
+  text-align: center;
+}
+
+#form a{
+  color: #5092e9;
+}
+
+#image:before{
+  content: "";
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #757F9A;
+  opacity: 80%;
+}
+
+#image img{
+  object-fit: cover;
+}

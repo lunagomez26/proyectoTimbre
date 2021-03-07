@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    font-family:'Maven Pro', sans-serif !important;
+}
+body{
+    background-image: url(../img/iniciosesionwp.jpg);
+}
+.trans-bg{
+    background-color: #000000a6;
+    width: 100%;
+    height: 100vh;
+    padding: 35px;
+    padding-bottom: 0px !important;
+}
+.pad-is{
+    padding: 110px 40px !important;
+    padding-bottom: 40px !important;
+    margin-top: 30px;
+    border: 3px #C43331 !important;
+}
+.is-tit{
+    width: 100%;
+    position: absolute;
+    margin: -60px 24px;
+    color: #C43331;
+    font-family: 'MuseoModerno' !important;
+}
+.btn-is{
+    margin: 10px 108px;
+}
+@media (max-width: 600px){
+    .trans-bg{
+        height: max-content !important;
+        padding: 35px 0px;
+    }
+    *{
+        overflow-x: hidden !important;
+    }
+    .pad-is{
+        padding: 0px !important;
+    }
+    .is-tit{
+        position: initial !important;
+        margin: 20px 23px;
+    }
+    .fix-is{
+        width: 100% !important;
+    }
+    .fix-is p{
+        padding: 0px 20px;
+    }
+    .btn-is{
+        margin: 10px 114px;
+    }
+    .img-is{
+        margin: 0px 140px;
+    }
+}

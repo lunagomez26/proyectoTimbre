@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Filtros usuarios</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h:commandLink>
+                    <p:graphicImage value="xlsx.png" style="width: 30px"/>
+                    <p:dataExporter type="xls" target="tabla" fileName="reporteUsuarios"/>
+                </h:commandLink>
+                <h1><h:outputText value="List"/></h1>
+                <p:dataTable id="tabla" value="#{usuarioController.consultarUsuario()}" var="item">
+                    <p:column filterBy="#{item.idUsuario}">
+                        <f:facet name="header">
+                            <h:outputText value="IdUsuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idUsuario}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="PrimerNombre"/>
+                        </f:facet>
+                        <h:outputText value="#{item.primerNombre}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="PrimerApellido"/>
+                        </f:facet>
+                        <h:outputText value="#{item.primerApellido}"/>
+                    </p:column>
+                    <p:column filterBy="#{item.documento}">
+                        <f:facet name="header">
+                            <h:outputText value="Documento"/>
+                        </f:facet>
+                        <h:outputText value="#{item.documento}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Correo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.correo}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Telefono"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telefono}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdRol"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idRol.nombreRol}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="TipoDocumento"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tipoDocumento.nombreTipoDocumento}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

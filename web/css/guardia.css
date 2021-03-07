@@ -1,0 +1,324 @@
+/* CSS PRINCIPAL */
+*{
+    font-family: 'Maven Pro', sans-serif;
+}
+body{
+    overflow: hidden;
+}
+.bg-c4{
+    background: #C43331;
+}
+.text-cc{
+    color: #ffffff;
+}
+.buscador::-webkit-input-placeholder{
+    color: #ffffff;
+}
+.navbar-superior{
+    width: 100%;
+    height: 9.5vh;
+    padding: 10px 40px;
+}
+.collapse-upbar{
+    display: none !important;
+}
+.show-porfile-menu{
+    right: 0 !important;
+}
+.notification-num{
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    position: absolute;
+    margin: -30px 10px;
+}
+.mail-num{
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    position: absolute;
+    margin: -30px 20px;
+}
+.text-c4{
+    color: #C43331 !important;
+}
+.buscador{
+    font-size: 16px;
+    animation: slide .15s;
+}
+.sidebar-container{
+    width: 14% !important;
+    height: 90.5vh;
+    background: rgba(196,52,49,1);
+    background: -moz-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,52,49,1)), color-stop(100%, rgba(250,92,92,1)));
+    background: -webkit-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -o-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -ms-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: linear-gradient(to bottom, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43431', endColorstr='#fa5c5c', GradientType=0 );
+    position: fixed;
+}
+.sidebar{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.sidebar::-webkit-scrollbar{
+    width: 5px !important;background: rgba(196,52,49,1);
+    background: -moz-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,52,49,1)), color-stop(100%, rgba(250,92,92,1)));
+    background: -webkit-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -o-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: -ms-linear-gradient(top, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    background: linear-gradient(to bottom, rgba(196,52,49,1) 0%, rgba(250,92,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43431', endColorstr='#fa5c5c', GradientType=0 );
+}
+.sidebar::-webkit-scrollbar-thumb{
+    background: #3a3a3a;
+}
+.content{
+    width: 86% !important;
+    height: 90.5vh;
+    overflow: auto;
+    overflow-x: hidden !important;
+}
+.contentu{
+    width: 100% !important;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden !important;
+}
+.contentu::-webkit-scrollbar{
+    width: 0px;
+}
+.dash-principal{
+    width: 100%;
+    overflow: auto !important;
+}
+.icon-down{
+    font-size: 13px;
+}
+.inner-navs{
+    font-size: 13px;
+}
+.inner-navs-text{
+    color: #ffffff !important;
+}
+.inner-navs-text:hover{
+    color: #3a3a3a !important;
+}
+.img-fix{
+    margin-left: 26px;
+}
+.logo-2{
+    display: none;
+}
+.tit-mod{
+    width: 100%;
+    height: 120px;
+    background: #F3F4F8;
+    padding: 30px 28px;
+}
+.tit-mod-ic{
+    width: 50px !important;
+    height: 50px !important;
+    margin-top: 6px;
+}
+.tit-mod-ic .card-body{
+    padding: 6px;
+    font-size: 25px;
+    color: #FD7E14;
+}
+.tit-font{
+    font-family: 'MuseoModerno' !important;
+    margin-left: 46px;
+    margin-top: -10px;
+}
+@keyframes slide{
+    0%{
+        width: 0px;
+        font-size: 1px;
+    }
+    10%{
+        font-size: 2px;
+        width: 20px;
+    }
+    20%{
+        font-size: 3px;
+        width: 40px;
+    }
+    30%{
+        font-size: 4px;
+        width: 60px;
+    }
+    40%{
+        font-size: 5px;
+        width: 80px;
+    }
+    50%{
+        font-size: 6px;
+        width: 100px;
+    }
+    60%{
+        font-size: 8px;
+        width: 120px;
+    }
+    70%{
+        font-size: 10px;
+        width: 140px;
+    }
+    80%{
+        font-size: 12px;
+        width: 160px;
+    }
+    90%{
+        font-size: 14px;
+        width: 180px;
+    }
+    100%{
+        font-size: 16px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px){
+    body{
+        overflow: auto;
+    }
+    .sidebar-container{
+        display: none;
+    }
+    .collapse-upbar{
+        display: inline-block !important;
+        color: #ffffff !important;
+    }
+    .buscar-btn{
+        color: #ffffff !important;
+    }
+    .upbar-show li{
+        display: inline-block;
+    }
+    .upbar-show{
+        display: block;
+        position: absolute;
+        width: 90%;
+        background-color: #C43331;
+        margin: 0px;
+        top: 60px;
+        left: 5%;
+        padding: 30px 11%;
+        z-index: 2;
+    }
+    .upbar-hide{
+        display: none;
+    }
+    .navbar-superior{
+        padding: 10px 0px;
+        height: 60px  !important;
+        background: #C43331 !important;
+    }
+    .fix-menu{
+        margin-top: 0px;
+    }
+    .content{
+        width: 100% !important;
+    }
+    .sidebar-hide{
+        display: none !important;
+    }
+    .sidebar-show{
+        display: inline-block !important;
+        width: 90% !important;
+        left: 5%;
+        position: absolute;
+        top: 136px;
+        z-index: 2;
+    }
+    .buscador{
+        width: 160px !important;
+        background-color: #ffffff !important;
+    }
+    .buscador::-webkit-input-placeholder{
+        color: #3a3a3a !important;
+    }
+    .navbar-superior{
+        height: max-content;
+        padding: 10px;
+    }
+    .navbar-menu{
+        margin: 0px !important;
+        padding: 15px 0px !important;
+        font-size: 13.5px;
+        color: #ffffff !important;
+    }
+    .navbar-menu a{
+        color: #ffffff !important;
+    }
+    .navbar-menu div{
+        color: #FFC107 !important;
+    }
+    .img-fix{
+        margin-left: 5px !important;
+    }
+    .logo-2{
+        display: inline-block;
+    }
+    .logo-1{
+        display: none;
+    }
+}
+/* INICIO RESIDENTE */
+.icon-parts{
+    width: 25% !important;
+    height: 100% !important;
+    padding: 20px 5px;
+    font-size: 25px;
+}
+.text-parts p{
+    font-size: 14px;
+}
+.text-parts h4{
+    font-family: 'MuseoModerno' !important;
+}
+.cards-info{
+    height: 120px !important;
+}
+/* ESTILOS EXCLUSIVOS */
+.spaces{
+    margin-top: 2%;
+}
+.btn-t:hover{
+    background-color: #d14e4c;
+}
+.formulario{
+    padding: 3%;
+}
+.cont-form{
+    padding: 3%;
+}
+.img-all{
+    height: 250px;
+    filter: grayscale(1);
+}
+.img-all:hover{
+    filter: grayscale(0);
+    transition-property: filter;
+    transition-duration: 0.5s;  
+}
+/* DASHBOARD */
+.icon-parts{
+    width: 25% !important;
+    height: 100% !important;
+    padding: 20px 5px;
+    font-size: 25px;
+}
+.text-parts p{
+    font-size: 14px;
+}
+.text-parts h4{
+    font-family: 'MuseoModerno' !important;
+}
+.cards-info{
+    height: 120px !important;
+}

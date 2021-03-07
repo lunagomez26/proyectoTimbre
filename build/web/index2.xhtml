@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <title>Timbre | CRUD</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/residente.css"/>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;display=swap" rel="stylesheet"/>
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/2e2f0df332.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10vh;">
+            <a class="navbar-brand" href="#">TIMBRE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modulo Usuarios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faces/Usuario/listaUsuario.xhtml" target="iframe_a">01. Usuarios</a>
+                            <a class="dropdown-item" href="faces/Rol/listaRol.xhtml" target="iframe_a">02. Roles</a>
+                            <a class="dropdown-item" href="faces/TipoDeDocumento/listaTipoDeDocumento.xhtml" target="iframe_a">03. Tipos de Documentos</a>
+                            <a class="dropdown-item" href="faces/Permiso/listaPermiso.xhtml" target="iframe_a">04. Permisos</a>
+                            <a class="dropdown-item" href="faces/PermisoRol/listaPermisoRol.xhtml" target="iframe_a">05. Permisos-Roles</a>
+                            <a class="dropdown-item" href="faces/GuardiaDeSeguridad/listaGuardiaDeSeguridad.xhtml" target="iframe_a">06. Guardias De Seguridad</a>
+                            <a class="dropdown-item" href="faces/Administrador/listaAdministrador.xhtml" target="iframe_a">07. Administradores</a>
+                            <a class="dropdown-item" href="faces/Turno/listaTurno.xhtml" target="iframe_a">08. Turnos</a>
+                            <a class="dropdown-item" href="faces/Residente/listarResidente.xhtml" target="iframe_a">09. Residentes</a>
+                            <a class="dropdown-item" href="faces/Apartamento/listaApartamento.xhtml" target="iframe_a">10. Apartamentos</a>
+                            <a class="dropdown-item" href="faces/Torre/listaTorre.xhtml" target="iframe_a">11. Torres</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modulo Reservas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faces/ZonaComunal/listarZonaComunal.xhtml" target="iframe_a">01. Zonas Comunales</a>
+                            <a class="dropdown-item" href="faces/Evento/listaEvento.xhtml" target="iframe_a">02. Eventos</a>
+                            <a class="dropdown-item" href="faces/Reserva/listaReserva.xhtml" target="iframe_a">03. Reservas</a>
+                            <a class="dropdown-item" href="faces/EstadoReserva/listaEstadoReserva.xhtml" target="iframe_a">04. Estados de Reserva</a>
+                            <a class="dropdown-item" href="faces/RespuestaReserva/listaRespuestaReserva.xhtml" target="iframe_a">05. Respuestas de Reserva</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modulo Ingreso
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faces/RegistroIngreso/listaRegistroIngreso.xhtml" target="iframe_a">01. Registros de Ingreso</a>
+                            <a class="dropdown-item" href="faces/Visitante/listaVisitante.xhtml" target="iframe_a">02. Visitantes</a>
+                            <a class="dropdown-item" href="faces/Correspondencia/listaCorrespondencia.xhtml" target="iframe_a">03. Correspondencia</a>
+                            <a class="dropdown-item" href="faces/Paqueteria/listaPaqueteria.xhtml" target="iframe_a">04. Paqueteria</a>
+                            <a class="dropdown-item" href="faces/Papeleria/listaPapeleria.xhtml" target="iframe_a">05. Papeleria</a>
+                            <a class="dropdown-item" href="faces/Tamaño/listaTamaño.xhtml" target="iframe_a">06. Tamaños</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modulo PQRS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="faces/Solicitud/listaSolicitud.xhtml" target="iframe_a">01. Solicitudes</a>
+                            <a class="dropdown-item" href="faces/TipoSolicitud/listaTipoSolicitud.xhtml" target="iframe_a">02. Tipos de Solicitud</a>
+                            <a class="dropdown-item" href="faces/EstadoSolicitud/listaEstadoSolicitud.xhtml" target="iframe_a">03. Estados de Solicitud</a>
+                            <a class="dropdown-item" href="faces/RespuestaSolicitud/listaRespuestaSolicitud.xhtml" target="iframe_a">04. Respuestas Solicitud</a>
+                            <a class="dropdown-item" href="faces/Cita/listaCita.xhtml" target="iframe_a">05. Citas</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <iframe src="" name="iframe_a" style="width:100%; height: 89vh; border:white;">
+            
+        </iframe>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </h:body>
+</html>
+

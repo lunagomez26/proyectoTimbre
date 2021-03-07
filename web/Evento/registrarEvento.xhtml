@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <title>Timbre | Registrar Evento</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/residente.css"/>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;display=swap" rel="stylesheet"/>
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/2e2f0df332.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="card p-5 mt-5 w-50 mx-auto">
+                <div class="col d-flex justify-content-center">         
+                    <f:view>
+                        <h:form>
+                            <h1>Registrar Evento</h1>
+                            <h:panelGrid columns="2" class="cont-formulario">
+                                <h:outputLabel value="FechaHora:" for="fechaHora" />
+                                <h:inputText   class="form-control" id="fechaHora" value="#{eventoController.evento.fechaHora}" title="FechaHora" required="true" requiredMessage="The FechaHora field is required.">
+                                    <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                </h:inputText>
+                                <h:outputLabel value="CantPersonas:" for="cantPersonas" />
+                                <h:inputText class="form-control" id="cantPersonas" value="#{eventoController.evento.cantPersonas}" title="CantPersonas" required="true" requiredMessage="The CantPersonas field is required."/>
+                                <h:outputLabel value="Descripcion:" for="descripcion" />
+                                <h:inputTextarea rows="4" cols="30" id="descripcion" value="#{eventoController.evento.descripcion}" title="Descripcion" required="true" requiredMessage="The Descripcion field is required."/>
+                                <h:outputLabel value="Zona Comunal:" for="idZonaComunal" />
+                                <h:selectOneMenu  class="form-control" id="idZonaComunal" value="#{eventoController.zonaComunal.idZonaComunal}" title="IdZonaComunal" required="true" requiredMessage="The IdZonaComunal field is required.">
+                                   <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{zonaComunalController.consultarZonaComunal()}" var="zonaComunal" itemValue="#{zonaComunal.idZonaComunal}" itemLabel="#{zonaComunal.zonaComunal}"/>
+                                </h:selectOneMenu>
+                                <h:commandButton class="btn btn-primary" value="Registrar" action="#{eventoController.registrarEvento()}"></h:commandButton>
+                            </h:panelGrid>
+                        </h:form>
+                    </f:view>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/adm.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+       
+    </h:body>
+</html>

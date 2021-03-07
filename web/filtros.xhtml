@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+    <h:head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    
+        <!-- Bootstrap CSS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/adm.css"/>
+        <link rel="stylesheet" href="css/morris.css"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;display=swap" rel="stylesheet"/>
+
+        <!-- FontAwesome -->
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet" />
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet" />
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/2e2f0df332.js" crossorigin="anonymous"></script>
+    
+        <!-- Titulo y Favicon -->
+        <title>Timbre | Dashboard Administrador</title>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+    </h:head >
+    <h:body>
+        <div class="navbar-superior">
+
+    </div>
+    <div class="navbar-superior bg-white shadow fixed-top">
+
+        <a href="#" class="img-fix logo-1">
+            <img src="img/logo3.png" alt="" width="60"/>
+        </a>
+        <a href="#" class="img-fix logo-2">
+            <img src="img/Logo2.png" alt="" width="60"/>
+        </a>
+        
+        <button class="btn float-right collapse-upbar text-dark" id="collapse-upbar-boton">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav float-right upbar-hide navbar-menu" id="upbar">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" href="#">
+                <i class="fas fa-question-circle"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <i class="fas fa-envelope"></i>
+                    <div class="mail-num text-danger">
+                        3
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <i class="fas fa-bell"></i>
+                    <div class="notification-num text-danger">
+                        10
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark"  href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/porfile-img.jpg" alt="" width="30" class="rounded-circle"/>
+                    Administrador
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="faces/Usuario/listaUsuario.xhtml" target="iframe_a">Editar Perfil</a>
+                  <a class="dropdown-item" href="iniciarSesion.xhtml">Salir</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline float-right d-none buscar-form fix-menu" id="buscar-form">
+            <i class="fas fa-times mr-2 text-dark buscar-btn" id="mostrar-buscar" style="font-size: 13px; cursor: pointer;"></i>
+            <input class="border-0 buscador bg-dark rounded-pill pl-3" type="search" placeholder="Buscar" aria-label="Search"/>
+            <button class="btn" type="submit">
+                <i class="fas fa-search text-dark buscar-btn"></i>
+            </button>
+        </form>
+        <button class="btn float-right fix-menu" id="buscar-btn">
+            <i class="fas fa-search text-dark buscar-btn"></i>
+        </button>
+    </div>
+
+    <div class="sidebar-container  float-left" id="sidebar">
+        <div class="sidebar">
+            <ul class="nav flex-column py-4 pl-4">
+                <li class="nav-item text-cc">
+                    <i class="fas fa-tachometer-alt pr-2 py-2"></i>
+                    Principal
+                    <ul class="nav flex-column py-3 inner-navs">
+                        <li class="nav-item">
+                            <a class="nav-link inner-navs-text" href="faces/administradorIni.xhtml" target="iframe_a">
+                                <i class="fas fa-rocket pr-1"></i>
+                                Inicio
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item text-cc">
+                    <a class="inner-navs-text cursor-pointer" onclick="HideMenu(1)">
+                        <i class="fas fa-users pr-2 py-2"></i>
+                        Usuarios
+                        <i class="fas fa-chevron-down icon-down" id="downton1"></i>
+                        <i class="fas fa-chevron-up icon-down d-none" id="upton1"></i>
+                    </a>
+                    <ul class="nav flex-column py-3 inner-navs">
+                        <li class="nav-item d-none" id="nav-item1">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/UsuarioTable.xhtml" target="iframe_a">Usuarios</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item2">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/rol.xhtml" target="iframe_a">Roles</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item3">
+                            <a class="nav-link inner-navs-text" href="faces/TipoDeDocumento/listaTipoDeDocumento.xhtml" target="iframe_a">Tipos de Documentos</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item4">
+                            <a class="nav-link inner-navs-text" href="faces/Permiso/listaPermiso.xhtml" target="iframe_a">Permisos</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item5">
+                            <a class="nav-link inner-navs-text" href="faces/PermisoRol/listaPermisoRol.xhtml" target="iframe_a">Permisos-Roles</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item6">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaGuardiaDeSeguridad.xhtml" target="iframe_a">Guardias De Seguridad</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item7">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaAdministrador.xhtml" target="iframe_a">Administradores</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item8">
+                            <a class="nav-link inner-navs-text" href="faces/Turno/listaTurno.xhtml" target="iframe_a">Turnos</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item9">
+                            <a class="nav-link inner-navs-text" href="faces/Residente/listarResidente.xhtml" target="iframe_a">Residentes</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item10">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaApartamento.xhtml" target="iframe_a">Apartamentos</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item11">
+                            <a class="nav-link inner-navs-text" href="faces/Torre/listaTorre.xhtml" target="iframe_a">Torres</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item text-cc">
+                    <a class="inner-navs-text cursor-pointer" onclick="HideMenu(2)">
+                        <i class="fas fa-calendar-alt pr-2 py-2"></i>
+                        Reservas
+                        <i class="fas fa-chevron-down icon-down" id="downton2"></i>
+                        <i class="fas fa-chevron-up icon-down d-none" id="upton2"></i>
+                    </a>
+                    <ul class="nav flex-column py-3 inner-navs">
+                        <li class="nav-item d-none" id="nav-item12">
+                            <a class="nav-link inner-navs-text" href="faces/ZonaComunal/listarZonaComunal.xhtml" target="iframe_a">Zonas Comunales</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item13">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaEventos.xhtml" target="iframe_a">Eventos</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item14">
+                            <a class="nav-link inner-navs-text" href="faces/Reserva/listaReserva.xhtml" target="iframe_a">Reservas</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item15">
+                            <a class="nav-link inner-navs-text" href="faces/EstadoReserva/listaEstadoReserva.xhtml" target="iframe_a">Estados de Reserva</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item16">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaRespuestaReserva.xhtml" target="iframe_a">Respuestas de Reserva</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item text-cc">
+                    <a class="inner-navs-text cursor-pointer" onclick="HideMenu(3)">
+                        <i class="fas fa-door-open pr-2 py-2"></i>
+                        Ingreso
+                        <i class="fas fa-chevron-down icon-down" id="downton3"></i>
+                        <i class="fas fa-chevron-up icon-down d-none" id="upton3"></i>
+                    </a>
+                    <ul class="nav flex-column py-3 inner-navs">
+                        <li class="nav-item d-none" id="nav-item17">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaRegistroIngreso.xhtml" target="iframe_a">Registros de Ingreso</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item18">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaVisitante.xhtml" target="iframe_a">Visitantes</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item19">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaCorrespondencia.xhtml" target="iframe_a">Correspondencia</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item20">
+                            <a class="nav-link inner-navs-text" href="faces/Paqueteria/listaPaqueteria.xhtml" target="iframe_a">Paqueteria</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item21">
+                            <a class="nav-link inner-navs-text" href="faces/Papeleria/listaPapeleria.xhtml" target="iframe_a">Papeleria</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item22">
+                            <a class="nav-link inner-navs-text" href="faces/Tamaño/listaTamaño.xhtml" target="iframe_a">Tamaños</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item text-cc">
+                    <a class="inner-navs-text cursor-pointer" onclick="HideMenu(4)">
+                        <i class="fas fa-hands-helping pr-2 py-2"></i>
+                        P.Q.R.S.
+                        <i class="fas fa-chevron-down icon-down" id="downton4"></i>
+                        <i class="fas fa-chevron-up icon-down d-none" id="upton4"></i>
+                    </a>
+                    <ul class="nav flex-column py-3 inner-navs">
+                        <li class="nav-item d-none" id="nav-item23">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaSolicitud.xhtml" target="iframe_a">Solicitudes</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item24">
+                            <a class="nav-link inner-navs-text" href="faces/TipoSolicitud/listaTipoSolicitud.xhtml" target="iframe_a">Tipos de Solicitud</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item25">
+                            <a class="nav-link inner-navs-text" href="faces/EstadoSolicitud/listaEstadoSolicitud.xhtml" target="iframe_a">Estados de Solicitud</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item26">
+                            <a class="nav-link inner-navs-text" href="faces/filtros/listaRespuestaSolicitud.xhtml" target="iframe_a">Respuestas Solicitud</a>
+                        </li>
+                        <li class="nav-item d-none" id="nav-item27">
+                            <a class="nav-link inner-navs-text" href="faces/Cita/listaCita.xhtml" target="iframe_a">Citas</a>
+                        </li>
+                    </ul>
+                </li>
+                <p class="text-light icon-brand p-2 rounded-pill"><i class="fas fa-bell pr-2"></i>Timbre ®</p>
+                    
+                    
+            </ul>
+        </div>
+    </div>
+        <iframe name="iframe_a" src="faces/administradorIni.xhtml" class="content float-right">
+            
+        </iframe>
+
+    <!-- Optional JavaScript -->
+    <script src="JS/morris.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/adm.js"></script>
+    <script src="js/graficos2.js"></script>
+    <script src="js/graficos1.js"></script>
+    
+    </h:body>
+</html>

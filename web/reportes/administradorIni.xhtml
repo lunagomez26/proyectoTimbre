@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    
+        <!-- Bootstrap CSS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/adm.css"/>
+        <link rel="stylesheet" href="css/morris.css"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&amp;display=swap" rel="stylesheet"/>
+
+        <!-- FontAwesome -->
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet" />
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet" />
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/2e2f0df332.js" crossorigin="anonymous"></script>
+    
+        <!-- Titulo y Favicon -->
+        <title>Timbre | Dashboard Administrador</title>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+    </h:head >
+    <h:body>
+        <div class="bg-light contentu">
+        <div class="pb-5">
+            <div class="tit-mod">
+                <div class="container">
+                    <div class="card  tit-mod-ic shadow-sm float-left">
+                        <div class="card-body text-center">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="float-left">
+                        <p class="text-secondary ml-5">
+                            Principal/Inicio
+                        </p>
+                        <h3 class="tit-font">
+                            Inicio
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-md-3 mt-5">
+                    <div class="card rounded-lg shadow cards-info">
+                        <div class="card-body">
+                            <div class="icon-parts float-left text-warning">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="float-left text-parts ml-2">
+                                <p class="text-secondary">Usuarios Registrados</p>
+                                <h4>325</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="card rounded-lg shadow cards-info">
+                        <div class="card-body">
+                            <div class="icon-parts float-left text-primary">
+                                <i class="fas fa-door-open pr-2 py-2"></i>
+                            </div>
+                            <div class="float-left text-parts ml-2">
+                                <p class="text-secondary">Registros de Ingreso</p>
+                                <h4>1204</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="card rounded-lg shadow cards-info">
+                        <div class="card-body">
+                            <div class="icon-parts float-left text-success">
+                                <i class="far fa-calendar-alt pr1"></i>
+                            </div>
+                            <div class="float-left text-parts ml-2">
+                                <p class="text-secondary">Reservas Realizadas</p>
+                                <h4>120</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="card rounded-lg shadow cards-info">
+                        <div class="card-body">
+                            <div class="icon-parts float-left text-info">
+                                <i class="fas fa-hands-helping pr-2 py-2"></i>
+                            </div>
+                            <div class="float-left text-parts ml-2">
+                                <p class="text-secondary">Solicitudes Realizadas</p>
+                                <h4>165</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-md-2 mt-5 mx-auto">
+                    <div class="card rounded-pill bg-c4 text-light p-1 text-center py-2 shadow border-0">
+                        Usuarios
+                    </div>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-md-6 mt-5">
+                    <div class="card shadow">
+                        <div class="card-header">
+                          Grafico Usuarios
+                        </div>
+                        <a href="#{uplCtrlReportes.pathReal}" target="_blank"><button class="btn btn-danger"> Descargar PDF</button></a>
+                        <div class="card-body">
+                            <canvas id="grafico1"></canvas>
+                        </div>
+                    </div>                      
+                </div>
+                <div class="col-md-6 mt-5">
+                    <div class="card shadow">
+                        <div class="card-header">
+                          Grafico Interacción usuarios
+                        </div>
+                        <a href="#{uplCtrlReportes.pathReal2}" target="_blank"><button class="btn btn-danger"> Descargar PDF</button> </a>
+                        <div class="card-body">
+                          <canvas id="grafico2"></canvas>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+           
+           
+            <div class="row px-5">
+                <div class="col-md-2 mt-5 mx-auto">
+                    <div class="card rounded-pill bg-c4 text-light p-1 text-center py-2 shadow border-0">
+                        P.Q.R.S
+                    </div>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-md-6 mt-5">
+                    <div class="card shadow">
+                        <div class="card-header">
+                          Grafico 7
+                        </div>
+                        <a href="../Archivos/Reporte%20Reserva.pdf" target="_blank"><button class="btn btn-danger"> Descargar PDF</button> </a>
+                        <div class="card-body">
+                            <canvas id="grafico7"></canvas>
+                        </div>
+                    </div>                      
+                </div>
+                <div class="col-md-6 mt-5">
+                    <div class="card shadow">
+                        <div class="card-header">
+                          Grafico 8
+                        </div>
+                        <div class="card-body">
+                          <canvas id="grafico8"></canvas>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Optional JavaScript -->
+    <script src="JS/morris.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/adm.js"></script>
+    <script src="js/graficos2.js"></script>
+    <script src="js/graficos1.js"></script>
+    </h:body>
+</html>
+
